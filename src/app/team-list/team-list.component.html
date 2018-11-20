@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-sm-12">
+        <button class="btn btn-primary">New Team</button>
+  </div>
+
+  <div class="col-sm-12">
+    <app-team-item *ngFor="let team of teams" [team]="team" (selectedTeam)="OnSelectItem($event)"></app-team-item>
+</div>
+</div>
