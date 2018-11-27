@@ -1,7 +1,6 @@
 import { Component, OnInit,EventEmitter } from '@angular/core';
 import { TeamModule } from 'src/app/team/team.module';
-import { Input } from '@angular/core';
-import { Output } from '@angular/core';
+import { TeamService } from '../team/team.service';
 
 @Component({
   selector: 'app-team-list',
@@ -10,23 +9,11 @@ import { Output } from '@angular/core';
 })
 export class TeamListComponent implements OnInit {
   teams: TeamModule[];
-  @Output() selectedTeam = new EventEmitter<TeamModule>();
-  constructor() { }
+ 
+  constructor(private teamsService:TeamService) { }
 
   ngOnInit() {
-    this.teams=[
-
-      new TeamModule('FC Barcelone', 'Més que un club', 'http://pngimg.com/uploads/fcb_logo/fcb_logo_PNG19.png'),
-      new TeamModule(
-        'Real Madrid',
-        'Hala Madrid !',
-        'https://medias.lequipe.fr/logo-football/108/300?(none)'
-      )
-    ];
-    
+    this.teams= this.teamsService.getTeams();    
   }
-  OnSelectItem(team)
-  {
-    this.selectedTeam.emit(team);
-  }
+ 
 }

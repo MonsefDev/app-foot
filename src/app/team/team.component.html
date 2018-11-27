@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-sm-6">
-    <app-team-list (selectedTeam)="OnSelectItem($event)"></app-team-list>
+    <app-team-list ></app-team-list>
   </div>
   <div class="col-sm-6">
-    <app-team-detail [team]="selectedTeam" *ngIf="selectedTeam"></app-team-detail>
+    <app-team-detail [team]="selectedTeam" *ngIf="selectedTeam ;else noSelecetedTeam"></app-team-detail>
+    <ng-template #noSelecetedTeam> <h1 class='title-team'>Please Select Team</h1> </ng-template>
   </div>
 </div>

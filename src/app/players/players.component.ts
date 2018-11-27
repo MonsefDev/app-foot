@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerModel } from './players.module';
+import { PlayerService } from './player.service';
 
 @Component({
   selector: 'app-players',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private playerservice:PlayerService) { }
+  players: PlayerModel[];
   ngOnInit() {
+    this.players= this.playerservice.getplayers();
   }
+  onAddPlayer(player: PlayerModel){
+    this.players.push(player);
 
+  }
 }

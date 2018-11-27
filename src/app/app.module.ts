@@ -12,7 +12,11 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { TeamItemComponent } from './team-list/team-item/team-item.component';
 import { PlayersComponent } from './players/players.component';
 import { PlayerEditComponent } from './players/player-edit/player-edit.component';
-import { ExampleComponent } from './example/example.component';
+import { HighlightDirective } from './directive/highlight.directive';
+import { DropdownDirective } from './directive/dropdown.directive';
+import { TeamService } from './team/team.service';
+import { LogginService } from './loggin.service';
+
  
 
 @NgModule({
@@ -25,7 +29,9 @@ import { ExampleComponent } from './example/example.component';
     TeamItemComponent,
     PlayersComponent,
     PlayerEditComponent,
-    ExampleComponent,
+    HighlightDirective,
+    DropdownDirective,
+  
    
   ],
   imports: [
@@ -33,7 +39,7 @@ import { ExampleComponent } from './example/example.component';
     FormsModule,    
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TeamService,LogginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamModule } from 'src/app/team/team.module';
+import { TeamService } from './team.service';
 
 @Component({
   selector: 'app-team',
@@ -8,13 +9,15 @@ import { TeamModule } from 'src/app/team/team.module';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  constructor(private teamservice: TeamService) { }
   selectedTeam: TeamModule;
   ngOnInit() {
+    this.teamservice.SeletedTeam.subscribe((team:TeamModule)=>{
+      console.log('recieved data');
+      this.selectedTeam =team;
+    })
   }
 
-  OnSelectItem(team){
-    this.selectedTeam=team;
-  }
+ 
 
 }
