@@ -40,4 +40,5 @@ export class HighlightDirective implements OnInit {
   ngOnInit(){
     this.bg=this.defaultbg;
   }*/
+  ngOnInit(){}
 }
