@@ -19,8 +19,7 @@ export class TeamModule {
     this.name=name;
     this.description=description;
     this.image=image;
-    this.player=player;
-
-    console.log(player);
+    this.player=player;    
+ 
   }
  }

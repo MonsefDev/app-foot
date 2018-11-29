@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-    <img [src]="team?.image" [alt]="team?.name" class="img-responsive">
+  <!-- <img [src]="team?.image" [alt]="team?.name" class="img-responsive">--> 
   </div>
 </div>
 <div class="row">
@@ -16,7 +16,7 @@
         Manage Team <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="">To Players</a></li>
+        <li><a  (click)="addPlayersTolist()">To Players</a></li>
         <li><a href="">Edit Team</a></li>
         <li><a href="">Delete Team</a></li>
       </ul>

@@ -2,6 +2,7 @@ import { Injectable,EventEmitter } from '@angular/core';
 import { TeamModule } from './team.module';
 import { LogginService } from '../loggin.service';
 import { PlayerModel } from '../players/players.module';
+import { PlayerService } from '../players/player.service';
  
 
 @Injectable({
@@ -15,8 +16,10 @@ export class TeamService {
     new TeamModule
     ('FC Barcelone', 'Més que un club', 'http://pngimg.com/uploads/fcb_logo/fcb_logo_PNG19.png',
     [
-      new PlayerModel('indere Inseta',25),
-      new PlayerModel('indere Inseta',25),
+      new PlayerModel('	Busquets Oriol',25),
+      new PlayerModel('	Vidal Arturo',25),
+      new PlayerModel('	Dembélé Ousmane',25),
+      new PlayerModel('	Umtiti, Samuel',25),
     ]
     
     ),
@@ -25,17 +28,21 @@ export class TeamService {
       'Hala Madrid !',
       'https://medias.lequipe.fr/logo-football/108/300?(none)',
       [
-        new PlayerModel('indere Inseta',25),
-        new PlayerModel('indere Inseta',25),
+        new PlayerModel('Luka Modrić',30),
+        new PlayerModel('Daniel Carvajal',27),
+        new PlayerModel('Toni Kroos',26),
+        new PlayerModel('Gareth Bale',29),
       ]
     )
   ];
 
-  constructor(private login:LogginService) { }
+  constructor(private login:LogginService,private playerservice: PlayerService) { }
   getTeams(){
-    this.login.log('TEAM LOGGIN SERVICE');
-    return this.teams.slice();
- 
+     return this.teams.slice(); 
     
+  }
+
+  addPlayersTolist(players: PlayerModel[]){
+    this.playerservice.addplayers(players);
   }
 }

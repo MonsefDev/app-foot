@@ -13,4 +13,15 @@ export class PlayerService {
     this.loggingService.log('GET PLAYER');
     return this.player.slice();
   }
+  addplayer(player:PlayerModel){
+    this.player.push(player);
+  }
+ 
+  addplayers(players:PlayerModel[]){
+    /*for(let plyer of players){
+      this.addplayer(plyer);     
+    }*/
+    this.player.push(...players);
+  
+  }
 }

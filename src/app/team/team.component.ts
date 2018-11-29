@@ -13,8 +13,7 @@ export class TeamComponent implements OnInit {
   selectedTeam: TeamModule;
   ngOnInit() {
     this.teamservice.SeletedTeam.subscribe((team:TeamModule)=>{
-      console.log('recieved data');
-      this.selectedTeam =team;
+          this.selectedTeam =team;
     })
   }
 
