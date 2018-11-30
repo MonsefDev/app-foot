@@ -1,7 +1,7 @@
 import { Component, OnInit,EventEmitter } from '@angular/core';
 import { TeamModule } from 'src/app/team/team.module';
 import { Input } from '@angular/core';
-import { TeamService } from 'src/app/team/team.service';
+
 
 
 @Component({
@@ -11,13 +11,12 @@ import { TeamService } from 'src/app/team/team.service';
 })
 export class TeamItemComponent implements OnInit {
   @Input() team:TeamModule;
+  @Input() index:number;
  
-  constructor(private teamservice: TeamService) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  OnSelectItem(){
-   this.teamservice.SeletedTeam.emit(this.team);
-  }
+ 
 
 }

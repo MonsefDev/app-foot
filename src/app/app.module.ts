@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TeamComponent } from './team/team.component';
@@ -16,8 +13,14 @@ import { HighlightDirective } from './directive/highlight.directive';
 import { DropdownDirective } from './directive/dropdown.directive';
 import { TeamService } from './team/team.service';
 import { LogginService } from './loggin.service';
+import { AppRoutingModule } from './app-routing.module';
+import { TeamIntroComponent } from './team/team-intro/team-intro.component';
+import { TeamEditComponent } from './team/team-edit/team-edit.component';
+ 
+ 
 
  
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { LogginService } from './loggin.service';
     PlayerEditComponent,
     HighlightDirective,
     DropdownDirective,
-  
+    TeamIntroComponent,
+    TeamEditComponent
+     
+ 
    
   ],
   imports: [

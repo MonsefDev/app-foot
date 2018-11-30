@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,11 @@ export class AppComponent implements OnInit {
 
   }
 
+  constructor(private router:Router){}
   OnSelecteFeature(feature){
     this.feature=feature;
   }
+   
+
 }
 

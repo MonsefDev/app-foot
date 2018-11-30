@@ -45,4 +45,9 @@ export class TeamService {
   addPlayersTolist(players: PlayerModel[]){
     this.playerservice.addplayers(players);
   }
+
+  getTeam(id:number){
+    return this.teams[id];
+
+  }
 }

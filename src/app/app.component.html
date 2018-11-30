@@ -1,20 +1,17 @@
- 
  <app-header (selectedFeature)="OnSelecteFeature($event)"></app-header>
 
 <div class="container">
    <div class="row">
     <div class="col-sm-12">
-        <app-team *ngIf="feature==='teams'"></app-team>
-        <app-players *ngIf="feature==='players'"></app-players>
+       <!-- <app-team *ngIf="feature==='teams'"></app-team>
+        <app-players *ngIf="feature==='players'"></app-players>-->        
+         <router-outlet></router-outlet>
     </div>
    </div>
-</div>  
- 
+</div> 
+
 <!--<app-example>
     Hello from app.component.html derictive
     <input type="text" [ngModel]="name" class="title" #title>
-</app-example>-->
-
-
-
+</app-example> -->
  
